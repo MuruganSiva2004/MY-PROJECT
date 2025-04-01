@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebcd;
+            padding: 50px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            position: relative;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        h1 {
+            color: #ff1493;
+        }
+        p {
+            color: #333;
+        }
+        .balloons {
+            font-size: 50px;
+            animation: float 3s infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        .birthday-image {
+            width: 200px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay >
+        <source src="./Audio/_Tirunelveli_Alvada_Song_Thirunelveli_Halvada_Song_Ringtone_(by Fringster.com).mp3" type="audio/mpeg">
+    </audio>
+    <div class="card">
+        <div class="balloons">🎈🎉🎂🎁</div>
+        <h1>Happy Birthday!</h1>
+        <img src="./Image/vignesh.jpeg" alt="Birthday Boy" class="birthday-image">
+        <p>Wishing you a day filled with love, joy, and all the things that make you happiest!</p>
+        <div class="balloons">🎁🎂🎉🎈</div>
+    </div>
+</body>
+</html>
