@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo</title>
+    <style>
+        *,*:before,*:after{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+        background-color: white;
+        height: 800px;
+        width: 800px;
+        margin:40px auto;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    html{
+        background-color: gray;
+    }
+       .container{
+        width: 600px;
+        height: 600px;
+        margin: px auto;
+        cursor: pointer;
+       }
+       .container1,.container3{
+        width: 100%;
+        height: 40%;
+        display: flex;
+       }
+       .container2{
+        width: 100%;
+        height: 20%;
+        display: flex;
+       }
+       .row1-col1,.row1-col3,.row3-col1,.row3-col3{
+        width: 40%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+       }   
+       .row1-col2,.row3-col2{
+        width: 20%;
+        height: 100%;
+       }
+       .row2-col1,.row2-col3{
+        width: 40%;
+        height: 100%;
+       }
+       .row2-col2{
+        width: 20%;
+        height: 100%;
+       }
+       .row1-col1-child,
+       .row1-col3-child,
+       .row3-col1-child,
+       .row3-col3-child{
+        width: 70%;
+        height: 70%;
+        }
+        .green{
+            background-color: green;
+        }
+        .yellow{
+            background-color: 	#FFA500;
+        }
+        .blue{
+            background-color: rgb(32, 144, 231);
+        }
+        .red{
+            background-color: red;
+        }
+         .white{
+        background-color: #fff;
+       }
+       .row1-col1-child>div,
+       .row1-col3-child>div,
+       .row3-col1-child>div,
+       .row3-col3-child>div{
+        width: 35%;
+        height: 35%;
+        margin: 7.5%;
+        float: left;
+        box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        transition: all 0.3s cubic-bezier(.25,.8,25,1);
+        border-radius: 50%;
+        border: 2px solid #000;
+       }
+       .row1-col1-child>div:hover,
+       .row1-col3-child>div:hover,
+       .row3-col1-child>div:hover,
+       .row3-col3-child>div:hover{
+        box-shadow: -2px 14px 28px rgba(0,0,0,.25),
+        -2px 10px 28px rgba(0,0,0,.22);
+       }
+       .row1-col2>div,
+       .row3-col2>div{
+        width: 33.33%;
+        height: 16.667%;
+        float: left;
+        border: 1px solid #000;
+       }
+      
+    .row2-col1 > div,
+    .row2-col3 > div {
+      width: 16.667%;
+      height: 33.33%;
+      float: left;
+      border: 1px solid #000;
+    }
+    .contain-triangle{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .triangle-right{
+        width: 0;
+        height: 0;
+        border-top: 55px solid transparent;
+        border-left: 55px solid green;
+        border-bottom: 55px solid transparent;
+        position: absolute;
+        left: 0;
+        top :5px;
+    }
+    .triangle-up{
+        width: 0;
+        height: 0;
+        border-left: 55px solid transparent;
+        border-right: 55px solid transparent;
+        border-bottom: 55px solid red;
+        position: absolute;
+        left: 5px;
+        bottom: 0;
+
+    }
+    .triangle-left{
+        width: 0px;
+        height: 0px;
+        border-right: 55px solid blue;
+        border-bottom: 55px solid transparent;
+        border-top: 55px solid transparent;
+        right: 0;
+        top: 5px;
+        position: absolute;
+    }
+    .triangle-down{
+         width: 0px;
+         height: 0px;
+         border-left: 55px solid transparent;
+         border-right: 55px solid transparent;
+         border-top: 55px solid #FFA500;
+         position: absolute;
+         right: 5px;
+         top:0px ;
+       }
+    .box{
+      width: 100px;
+      height: 100px;
+      float: left;
+      font-size:25px;
+      text-align:center;
+      
+    }
+    .gray{
+        background-color: rgb(236, 219, 219);
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+           <!--Green--> <div class="row1-col1 green">
+            <div class="row1-col1-child white">
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+            </div>
+           </div>
+           <!--Path--> <div class="row1-col2">
+            <!--1St line-->
+            <div></div>
+            <div class="box">&#8595;</div>
+            <div></div>
+            <!--2nd line-->
+            <div></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <!--3nd line-->
+            <div class="box gray">&#11088;</div>
+            <div class="yellow"></div>
+            <div></div>
+            <!--4th line-->
+            <div></div>
+            <div class="yellow"></div>
+            <div></div>
+            <!--5thline-->
+            <div></div>
+            <div class="yellow"></div>
+            <div></div>
+            <!--6th-->
+            <div></div>
+            <div class="yellow"></div>
+            <div></div>
+
+           </div>
+            <!--Yellow--><div class="row1-col3 yellow">
+                <div class="row1-col3-child white">
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <!--Path---><div class="row2-col1">
+                <!--1st line-->
+                <div></div>
+                <div class="green"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <!--2st line-->
+                <div class="box">&#8594;</div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div> 
+                <!--3st line-->
+                <div></div>
+                <div></div>
+                <div class="box gray">&#11088;</div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!--Home--><div class="row2-col2">
+                <div class="contain-triangle">
+                    <div class="triangle-right"></div>
+                    <div class="triangle-up"></div>
+                    <div class="triangle-left"></div>
+                    <div class="triangle-down"></div>
+
+                </div>
+            </div>
+            <!--Path--><div class="row2-col3">
+                 <!--1st line-->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="box gray">&#11088;</div>
+                <div></div>
+                <div></div>
+                <!--2st line-->
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="box">&#8592;</div> 
+                <!--3st line-->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="blue"></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="container3">
+            <!--red---><div class="row3-col1 red">
+                <div class="row3-col1-child white">
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                </div>
+            </div>
+            <!--path--><div class="row3-col2">
+            <!--1St line-->
+            <div></div>
+            <div class="red"></div>
+            <div></div>
+            <!--2nd line-->
+            <div></div>
+            <div class="red"></div>
+            <div></div>
+            <!--3nd line-->
+             <div></div>
+            <div class="red"></div>
+            <div></div>
+            <!--4th line-->
+            <div></div>
+            <div class="red"></div>
+            <div class="box gray">&#11088;</div>
+            <!--5thline-->
+            <div class="red"></div>
+            <div class="red"></div>
+            <div></div>
+            <!--6th-->
+            <div></div>
+            <div class="box">&#8593;</div>
+            <div></div>
+            </div>
+            <!--blue--><div class="row3-col3 blue">
+                <div class="row3-col3-child white">
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

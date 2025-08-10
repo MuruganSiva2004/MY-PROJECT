@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Lobster', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:black;
+}
+h1{
+  color:grey;
+  font-size: 200px;
+  cursor: pointer;
+  animation: glow 1s ease infinite;
+}
+
+@keyframes glow {
+  from{
+    color:grey;
+  }
+  to{
+    color:white;
+    text-shadow: 
+0 0 5px #427ac9,
+0 0 25px #c861b5,
+0 0 50px #5e85da,
+0 0 100px #eb7cae;
+  }
+}
