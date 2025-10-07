@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Students</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image:url("second.jpeg");
+      background-size: cover;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: darkviolet;
+    }
+   table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border: 2px solid darkviolet;   /* outer border */
+  border-radius: 14px;            /* rounded corners */
+  overflow: hidden;               /* keeps radius visible */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+th {
+  background-color: darkviolet;
+  color: white;
+  font-size: 18px;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #fdf5ff;
+}
+
+tr:hover {
+  background-color:white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Student Details</h1>
+
+  <!-- ✅ Same Navbar -->
+  <nav>
+    <a href="stud0.html">Home</a> |
+    <a href="stud.html">Add Student</a> |
+    <a href="stud1.html">View Students</a> |
+    <a href="stud2.html">Contact</a>|
+    <a href="stud3.html">About</a>
+  </nav>
+
+  <div id="studentList"></div>
+
+  <script>
+    function loadStudents() {
+      let students = JSON.parse(localStorage.getItem("students")) || [];
+      const studentList = document.getElementById("studentList");
+
+      if (students.length === 0) {
+        studentList.innerHTML = "<p style='color:white;text-align:center;'>No students added yet.</p>";
+        return;
+      }
+
+      let table = "<table><tr><th>Name</th><th>Roll</th><th>Course</th><th>Action</th></tr>";
+      students.forEach((s, index) => {
+        table += `<tr>
+                    <td>${s.name}</td>
+                    <td>${s.roll}</td>
+                    <td>${s.course}</td>
+                    <td><button class="delete-btn" onclick="deleteStudent(${index})">Delete</button></td>
+                  </tr>`;
+      });
+      table += "</table>";
+      studentList.innerHTML = table;
+    }
+
+    function deleteStudent(index) {
+      let students = JSON.parse(localStorage.getItem("students")) || [];
+      students.splice(index, 1);
+      localStorage.setItem("students", JSON.stringify(students));
+      loadStudents();
+    }
+
+    // Load on page start
+    window.onload = loadStudents;
+  </script>
+</body>
+</html>
